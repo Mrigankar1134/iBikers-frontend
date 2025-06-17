@@ -1,0 +1,85 @@
+.home-page {
+  // General styles for the home page
+  overflow-x: hidden;
+  
+  // Each section will have its own component and SCSS file
+  // This file will mainly handle the bottom CTA and any global home page styles
+  
+  .bottom-cta {
+    position: relative;
+    padding: 100px 0;
+    margin-top: 60px;
+    background-image: url('/bottom-cta-bg.jpg');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    text-align: center;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay */
+      z-index: 1;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+    }
+    
+    .cta-button {
+      font-size: 1.2rem;
+      padding: 15px 40px;
+      background-color: var(--color-red);
+      color: var(--color-white);
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-block;
+      
+      &:hover {
+        background-color: var(--color-red-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        padding: 12px 30px;
+      }
+    }
+  }
+  
+  // Add spacing between sections
+  > div:not(:first-child):not(.bottom-cta) {
+    padding: 80px 0;
+    
+    @media (max-width: 768px) {
+      padding: 60px 0;
+    }
+  }
+  
+  // Add alternating background colors to sections
+  > div:nth-child(odd):not(:first-child):not(.bottom-cta) {
+    background-color: var(--color-light-gray);
+  }
+}
+
+// Note: Each component (HeroSection, HowItWorks, etc.) should have its own SCSS file
+// This file only handles the main layout and the bottom CTA section

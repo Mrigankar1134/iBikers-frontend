@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/Footer.scss';
+import suraj from '../../public/suraj.jpg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +19,6 @@ const Footer = () => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/browse">Browse Bikes</Link></li>
-              <li><Link to="/bookings">My Bookings</Link></li>
             </ul>
           </div>
           
@@ -27,6 +27,17 @@ const Footer = () => {
             <p><strong>Email:</strong> info@ibikers.com</p>
             <p><strong>Phone:</strong> +91 9504085344</p>
             <p><strong>Address:</strong> C901, C Block, IIM Amritsar, Manawala, 143109</p>
+          </div>
+          
+          <div className="footer-founder">
+            <h3>Founder</h3>
+            <div className="founder-info">
+              <img src={suraj} alt="Founder" className="founder-image" />
+              <div>
+                <p><strong>Founder, !Bikers</strong></p>
+                <p>MBA, IIM Amritsar</p>
+              </div>
+            </div>
           </div>
         </div>
         

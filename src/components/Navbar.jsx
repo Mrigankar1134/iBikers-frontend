@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.scss';
+import Logo from '../../public/Logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +27,9 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isLightPage && !scrolled ? 'light-page' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="logo">!BIKERS</Link>
+        <Link to="/" className="logo">
+          <img src={Logo} alt="Logo" className="logo-image" />
+          </Link>
         
         <div 
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`} 
